@@ -1,3 +1,15 @@
+:root {
+  --primary: #0d6efd;
+  --primary-hover: #0d56c4;
+  --success: #198754;
+  --success-hover: #0d5f39;
+  --white: #fff;
+
+  --default: #d6d6d6;
+  --default-hover: #ccc6c6;
+  --black: #000;
+}
+
 body {
   background-color: rgb(234, 238, 243);
 }
