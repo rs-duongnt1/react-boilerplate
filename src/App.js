@@ -1,16 +1,24 @@
 import { Provider } from 'react-redux';
 import { store } from './store';
-import React, { Component } from 'react';
-import Routes from 'routes';
+import React from 'react';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import routes from './routes';
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Routes />
-      </Provider>
-    );
-  }
+const App = () => {
+  const routing = useRoutes(routes());
+  return routing;
 }
 
-export default App;
+// class AppWrapper =
+
+const AppWrapper = () => {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  );
+};
+
+export default AppWrapper;

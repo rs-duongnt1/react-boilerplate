@@ -1,4 +1,3 @@
-import { Button } from 'stories/Button';
 // import useLocalStorage from "hooks/useLocalStorage";
 
 export default function Demo() {
@@ -6,7 +5,7 @@ export default function Demo() {
 
   return (
     <>
-      <Button>xyz</Button>
+      hello
     </>
   );
 }

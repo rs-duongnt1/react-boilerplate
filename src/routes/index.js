@@ -1,23 +1,26 @@
-import DemoLayout from 'layouts/DemoLayout';
+import DefaultLayout from 'layouts/Default';
+import { Suspense } from 'react';
 import Demo from 'pages/Demo';
-import React from 'react';
-import { BrowserRouter, Routes as Router, Route } from 'react-router-dom';
 
-const Routes = () => (
-  <BrowserRouter>
-    <Router>
-      <Route path="/" element={<DemoLayout />}>
-        <Route
-          path="/"
-          element={
-            <React.Suspense>
-              <Demo />
-            </React.Suspense>
-          }
-        ></Route>
-      </Route>
-    </Router>
-  </BrowserRouter>
-);
+const routes = () => [
+  {
+    path: '/',
+    element: (
+      <Suspense fallback={'Loading...'}>
+        <DefaultLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: '/',
+        element: (
+          <Suspense fallback={'Loading...'}>
+            <Demo />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+];
 
-export default Routes;
+export default routes;

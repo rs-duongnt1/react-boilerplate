@@ -1,7 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
-function DemoLayout() {
+function DefaultLayout() {
   return (
     <div>
       <Container maxWidth="xl">
@@ -15,4 +15,4 @@ function DemoLayout() {
   );
 }
 
-export default DemoLayout;
+export default DefaultLayout;
